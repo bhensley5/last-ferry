@@ -1,0 +1,49 @@
+/* Wick rides above the top roll, so the parchment remains a real, focusable form. */
+#editor {position:relative; isolation:isolate; padding:0; width:min(348px,44vw); background:none; border:0; box-shadow:none; color:#392d23}
+.wish-paper,#wick-intro {
+  background-color:#efdaab;
+  background-image:repeating-linear-gradient(4deg,#8f663009 0 1px,transparent 1px 4px),radial-gradient(ellipse at 48% 18%,#fff4d4,#f3dfb4 60%,#d9b783);
+  border:1px solid #b08a53;box-shadow:0 7px 18px #09262855,inset 0 0 12px #a47c4429;
+}
+.wish-paper {position:relative;border-radius:4px 5px 3px 7px;padding:10px 17px 9px;transform-origin:top center}
+.wish-paper::before,.wish-paper::after {content:"";position:absolute;left:-5px;right:-5px;height:7px;border:1px solid #9b7749;border-radius:5px;background:linear-gradient(#ead1a2,#fff0c9 30%,#c59e6a 95%);pointer-events:none}
+.wish-paper::before {top:-4px}.wish-paper::after{bottom:-3px;height:5px}
+#editor label {display:block;margin:0 0 3px;color:#5e3c2b;font:italic 20px Georgia,serif;letter-spacing:-.035em}
+#editor .ask {align-items:stretch;gap:8px}
+#editor input {background:transparent;color:#302b24;border:0;border-bottom:1px solid #93734a;border-radius:0;padding:5px 0;font:15px/1.3 Georgia,serif;outline-offset:3px}
+#editor input::placeholder{color:#6e6049;opacity:1}
+#editor button[type=submit],#wick-intro button {padding:5px 10px;border:1px solid #712d23;border-radius:4px;background:#933e2e;box-shadow:inset 0 0 0 1px #d58d61;color:#fff5d8;font:600 12px/1.3 system-ui;cursor:pointer}
+#editor button[type=submit]:disabled{opacity:.7;cursor:wait}
+#editor #edit-tip {color:#54472f;font:11px/1.35 system-ui;margin-top:5px;overflow:auto;max-height:4.2em;overflow-wrap:anywhere}
+.wick-perch {position:absolute;right:7px;bottom:calc(100% - 13px);width:79px;height:79px;pointer-events:none;z-index:1}
+.wick-flight,.wick-portrait,.wick-portrait img {width:100%;height:100%;display:block}
+.wick-portrait {pointer-events:auto;padding:0;border:0;background:none;cursor:pointer;transform-origin:50% 80%}
+.wick-portrait img{object-fit:contain;filter:drop-shadow(0 3px 2px #182b2166);animation:wick-hover 4.2s ease-in-out infinite}
+#editor:focus-within .wick-portrait img {animation:wick-listen 2.6s ease-in-out infinite}
+#editor[data-mood=sending] .wick-portrait img,#editor[data-mood=accepted] .wick-portrait img {animation:wick-cast .8s ease-in-out infinite alternate}
+#editor[data-mood=granted] .wick-portrait img,#editor[data-mood=cheer] .wick-portrait img {animation:wick-cheer .65s ease-in-out 2}
+#editor[data-mood=answered] .wick-portrait img,#editor[data-mood=error] .wick-portrait img {animation:wick-listen .65s ease-in-out 2}
+#editor[data-mood=accepted] .wish-paper {animation:wick-stamp .35s ease-out}
+#editor[data-mood=granted] .wish-paper {animation:wick-glow 1.15s ease-out}
+.wick-perch::after {content:'✦';position:absolute;right:76%;top:37%;opacity:0;color:#ffe4a2;text-shadow:-13px 10px 0 #a5efdd,14px -15px 0 #ffd698;font-size:17px}
+#editor[data-mood=granted] .wick-perch::after{animation:wick-sparks 1s ease-out 2}
+#wick-quip {position:absolute;bottom:calc(100% + 8px);right:76px;max-width:220px;color:#fff4cf;background:#163937f2;border:1px solid #c49e68;border-radius:12px 12px 2px 12px;padding:7px 10px;font:italic 14px/1.2 Georgia,serif}
+#wick-intro {position:fixed;z-index:6;left:50%;top:calc(50% + 24px);transform:translateX(-50%);width:min(280px,80vw);padding:13px 17px;text-align:center;border-radius:5px;color:#473324}
+#wick-intro strong{font:italic 26px Georgia,serif}#wick-intro p{font:14px/1.4 Georgia,serif;margin:6px 0 9px}#wick-intro kbd{padding:1px 4px}
+#wick-intro[hidden],#wick-quip[hidden]{display:none}
+.meeting-wick .wish-paper{opacity:.68}
+.wick-flight::after{content:"";position:absolute;bottom:8%;right:52%;width:19px;height:12px;border-radius:3px;pointer-events:none;opacity:0;background:radial-gradient(circle at center,#a64630 0 20%,transparent 23%),linear-gradient(162deg,#fff1c7,#d4b283);border:1px solid #8d693e}
+#editor[data-mood=accepted] .wick-flight::after{animation:wick-letter .65s ease-out both}
+@keyframes wick-letter{0%{opacity:0;transform:translate(10px,46px) rotate(12deg) scale(.5)}30%{opacity:1}85%{opacity:1;transform:translate(-8px,-2px) rotate(-14deg)}100%{opacity:0;transform:translate(-4px,-4px) scale(.55)}}
+@keyframes wick-hover {0%,100%{transform:translateY(1px) rotate(-2deg)}50%{transform:translateY(-3px) rotate(2deg)}}
+@keyframes wick-listen {0%,100%{transform:rotate(-4deg)}50%{transform:rotate(-8deg) translateY(2px)}}
+@keyframes wick-cast {from{transform:translateY(0) rotate(-4deg)}to{transform:translateY(-7px) rotate(5deg)}}
+@keyframes wick-cheer {0%,100%{transform:translateY(0)}45%{transform:translateY(-13px) rotate(12deg)}75%{transform:rotate(-6deg)}}
+@keyframes wick-stamp {45%{transform:scale(.98) rotate(-.7deg)}}
+@keyframes wick-glow {20%{box-shadow:0 0 24px #ffe3a5,inset 0 0 18px #fff0b5}}
+@keyframes wick-sparks {5%{opacity:0;transform:scale(.4)}35%{opacity:1}100%{opacity:0;transform:translate(-9px,-21px) scale(1.2)}}
+@media(max-width:650px){#editor{width:min(100%,375px);align-self:end}.wick-perch{width:66px;height:66px}.wish-paper{padding:7px 13px}#editor label{font-size:17px}}
+@media(max-height:480px) and (orientation:landscape){.wick-perch{width:48px;height:48px}.wish-paper{padding:4px 9px}#editor label{display:none}#editor #edit-tip{font-size:9px;max-height:2.8em}}
+@media(prefers-reduced-motion:reduce){#editor *,#editor *::after{animation:none!important;transition:none!important}}
+
+#bear-trail:not([hidden]){display:block;clear:both;margin:.45rem 0;color:#ffe2a3;background:#653c2f;border-left:3px solid #f2b864;padding:5px 8px;font:600 12px/1.35 system-ui}

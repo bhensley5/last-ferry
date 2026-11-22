@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Last Ferry · Harbor Atlas</title></head>
+<body>
+<canvas id="game" tabindex="0" aria-label="Harbor game. Move with WASD, drag to look, Space to jump or climb out of water."></canvas>
+<header class="masthead"><div class="brand"><span class="brand-seal" aria-hidden="true">舟</span><h1>Last Ferry</h1></div>
+<label class="world-state"><select id="map-select" aria-label="Choose map"></select><b id="revision">REV 0</b></label></header>
+<aside class="objective"><h2>Catch the last ferry.</h2><p id="objective-detail"></p><div id="encounter"><div><span id="encounter-name"></span><span id="encounter-state"></span></div><div class="encounter-track"><i id="encounter-progress"></i></div><strong id="encounter-cue"></strong></div><button type="button" id="continue-chapter" hidden></button><div class="rule"></div><div class="location"><span id="footing"></span><span id="coords"></span></div><span id="route-status"></span><span id="cargo"></span><span id="use-station"></span><span id="bear-trail" role="status" hidden></span><span id="health" aria-label="Health"></span></aside>
+<aside id="chart"><canvas id="map" width="182" height="145" aria-label="Harbor chart; click a platform to name it in an edit"></canvas><span id="map-label">N ↑ · Harbor chart</span></aside>
+<div id="toast" role="status"><span class="toast-mark">✦</span><div><b id="toast-title"></b><small id="toast-detail"></small></div></div>
+<div id="action-hint"><kbd>F</kbd><span>SWING OAR</span></div><div id="damage-vignette"></div><div id="notice"></div>
+<footer><div class="controls"><span><kbd>WASD</kbd>Move</span><span><kbd>Drag / Q E</kbd>Look</span><span><kbd>Space ×2</kbd>Vault</span><span><kbd>Shift</kbd>Run</span><span id="dash-control" hidden><kbd>X</kbd>Dash</span><span id="pulse-control"><kbd>F / Click</kbd>Swing</span></div>
+<form id="editor" data-mood="idle">
+  <div class="wick-perch"><div class="wick-flight"><button class="wick-portrait" type="button" aria-label="Meet Wick, your OpenClaw wish genie"><img src="/src/assets/wick.webp" alt="" width="100" height="100"></button></div></div>
+  <span id="wick-quip" hidden></span>
+  <div class="wish-paper"><label for="wish">A wish for Wick</label><div class="ask"><input id="wish" maxlength="600" autocomplete="off" placeholder="What shall we change?" /><button type="submit" aria-label="Send wish">Send <span aria-hidden="true">✦</span></button></div>
+  <small id="edit-tip" role="status" aria-live="polite"></small></div>
+</form></footer>
+<aside id="wick-intro" aria-label="Meet Wick" hidden><strong>Call me Wick.</strong><p>I’m your OpenClaw genie. Point at something and press <kbd>Enter</kbd> to wish it different.</p><button type="button">Let’s go ↗</button></aside>
+<script type="module" src="/src/main.js"></script></body></html>

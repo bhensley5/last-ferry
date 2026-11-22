@@ -1,0 +1,234 @@
+{
+  "v": 1,
+  "cmd": "ember-pass",
+  "mode": "replace",
+  "world": "last-ferry",
+  "base": 0,
+  "chapter": {"name": "Ember Pass", "alias": "pass", "order": 2, "biome": "upland"},
+  "seed": 316,
+  "look": "cedar-and-cinnabar",
+  "spawn": "salt-landing:entry",
+  "weather": {"time": "sunrise", "fog": 0.28, "waves": 0.1},
+  "goal": {
+    "type": "defeat",
+    "target": "ember-hart",
+    "title": "Face the Ember Hart.",
+    "hint": "Follow the ridge east. Vault the glowing antler sweep; strike when the kiln core opens.",
+    "completeTitle": "Ember Pass is yours.",
+    "completeHint": "The kiln has cooled. The road inland is open. Stay to explore or reshape the mountain.",
+    "stopsLabel": "Seals",
+    "stops": [
+      {
+        "platform": "tea-seal",
+        "title": "Raise the tea seal.",
+        "hint": "North: the tea road. East: Lantern Quay and the Koi Steps. Both lead to the tea seal.",
+        "guardian": "tea-seal-ram"
+      },
+      {
+        "platform": "potters-seal",
+        "title": "Fire the saffron kiln.",
+        "hint": "At Bamboo Brook, take the kiln road north or the chime bridge west. Vault the Gate Ram’s sweep.",
+        "guardian": "potters-seal-ram"
+      },
+      {
+        "platform": "fox-shrine",
+        "title": "Cross the cedar wood.",
+        "hint": "Keep west to the cedars and turn uphill to the fox shrine.",
+        "guardian": "fox-shrine-kite"
+      },
+      {
+        "platform": "vermilion-seal",
+        "title": "Open the vermilion gate.",
+        "hint": "East: the broken span. North: Moon Bridge, stranded high over the gorge. Both rejoin at Maple Overlook.",
+        "guardian": "vermilion-seal-ram"
+      },
+      {
+        "platform": "wind-seal",
+        "title": "Unbind the wind ribbons.",
+        "hint": "At Silkwind, ride the silk lift west or take the high ropes north above the red cedars.",
+        "guardian": "wind-seal-kite"
+      },
+      {
+        "platform": "charred-gate",
+        "title": "Wake the ridge guardian.",
+        "hint": "Head west to Copper Switch. Vault the Crown Stair and turn east to the last seal.",
+        "guardian": "charred-gate-ram"
+      }
+    ]
+  },
+  "roster": {
+    "ram": {
+      "kind": "crab",
+      "skin": "kiln-ram",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.29,
+          "projectileSpeed": 3.9,
+          "tell": 0.95,
+          "recover": 1.5,
+          "interval": 0.7
+        }
+      ]
+    },
+    "kite": {
+      "kind": "wisp",
+      "skin": "silk-kestrel",
+      "maxHits": 3,
+      "activationRange": 14,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "flank",
+          "attack": "pearlFan",
+          "count": 3,
+          "spread": 0.29,
+          "projectileSpeed": 3.9,
+          "tell": 0.95,
+          "recover": 1.5,
+          "interval": 0.7
+        }
+      ]
+    },
+    "gatekeeper": {"kind": "crab", "skin": "gate-ram", "maxHits": 5, "activationRange": 13, "phases": [{"afterHits": 0, "movement": "perch", "attack": "aimedPearl", "count": 1, "spread": 0.29, "projectileSpeed": 3.9, "tell": 1.15, "recover": 1.9, "interval": 0.7, "sequence": ["broadside", "antlerSweep"]}, {"afterHits": 3, "movement": "perch", "attack": "aimedPearl", "count": 1, "spread": 0.29, "projectileSpeed": 3.9, "tell": 1.15, "recover": 1.9, "interval": 0.7, "sequence": ["antlerSweep", "broadside"]}]},
+    "hart": {
+      "kind": "crab",
+      "skin": "ember-hart",
+      "maxHits": 8,
+      "activationRange": 17,
+      "pulseRange": 3.4,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "aimedPearl",
+          "count": 1,
+          "spread": 0.29,
+          "projectileSpeed": 3.9,
+          "tell": 1.15,
+          "recover": 1.65,
+          "interval": 0.7,
+          "sequence": [
+            "antlerSweep",
+            "breaker"
+          ]
+        },
+        {
+          "afterHits": 3,
+          "movement": "perch",
+          "attack": "aimedPearl",
+          "count": 1,
+          "spread": 0.29,
+          "projectileSpeed": 3.9,
+          "tell": 1,
+          "recover": 1.65,
+          "interval": 0.7,
+          "sequence": [
+            "bellfall",
+            "antlerSweep",
+            "pincers"
+          ]
+        },
+        {
+          "afterHits": 6,
+          "movement": "perch",
+          "attack": "aimedPearl",
+          "count": 1,
+          "spread": 0.29,
+          "projectileSpeed": 3.9,
+          "tell": 0.88,
+          "recover": 1.65,
+          "interval": 0.7,
+          "sequence": [
+            "breaker",
+            "antlerSweep",
+            "broadside"
+          ]
+        }
+      ]
+    }
+  },
+  "entities": [{"id":"landfall-ferry","kind":"ferry","at":[9,1.2,80],"size":[4.2,3.1],"speed":1.4,"path":[[9,1.2,80],[9,1.2,91]],"paused":true}],
+  "foothills": {
+    "columns": [-95,0,95], "width": 95,
+    "bands": [
+      {"north": 48, "south": 76, "height": 0.6},
+      {"north": 4, "south": 48, "height": 1.6},
+      {"north": -28, "south": 4, "height": 2.4},
+      {"north": -59, "south": -28, "height": 6.5},
+      {"north": -82, "south": -59, "height": 7},
+      {"north": -112, "south": -82, "height": 10.5, "cut": [-63, -54]},
+      {"north": -137, "south": -112, "height": 11, "cut": [-63, -54]},
+      {"north": -173, "south": -137, "height": 15.5},
+      {"north": -190, "south": -173, "height": 16},
+      {"north": -235, "south": -190, "height": 21}
+    ]
+  },
+  "trailNotes": {
+    "lantern-quay": "Pearl tea! The kettle keeper can brew that. North, hop the lotus stones.",
+    "bamboo-brook": "Smell the tea? The singing kettle is across the west bridge.",
+    "western-chain": "Too high? Try: move Moon Bridge down 7m.",
+    "silkwind-stairs": "Lift to the west, high ropes to the north. Your call."
+  },
+  "wilderness": {"ground":"foothill","warning":2.4,"pursuit":6},
+  "stations": [
+    {"id":"quay-tea","kind":"cargo","deck":"lantern-quay","offset":[0,0],"item":"pearl tea","count":1},
+    {"id":"kettle-bell","kind":"bell","deck":"singing-kettle","offset":[0,0],"label":"Brew pearl tea"},
+    {"id":"moon-amber","kind":"cargo","deck":"moon-observatory","offset":[0,0],"item":"moon amber","count":1},
+    {"id":"high-bell","kind":"bell","deck":"cloud-belfry","offset":[0,0],"label":"Offer the moon amber"}
+  ],
+  "cues": [
+    {"id":"tea-break","when":"use","target":"kettle-bell","needs":{"item":"pearl tea","count":1,"spend":true},"then":[{"op":"mend","hearts":2},{"op":"say","text":"The kettle sings. Two hearts restored."}]},
+    {"id":"wind-gift","when":"use","target":"high-bell","needs":{"item":"moon amber","count":1,"spend":true},"then":[{"op":"traveler","dash":true},{"op":"say","text":"The high bell answers. Press X for a wind-step."}]}
+  ],
+  "branches": [
+    {"id":"koi-run","name":"Koi Run","color":"#78ccbb","from":"salt-landing","to":"camellia-bend",
+     "via":[
+       {"id":"lantern-quay","at":[52,3.6,82],"size":[13,11],"dressing":"carpPort","approach":{"style":"ropeSpan","width":3.4}},
+       {"id":"koi-bank","at":[52,4.4,59],"size":[8,7],"dressing":"carpPort","approach":{"steps":3,"jumpGap":2.05,"width":3.1}}
+     ],"exit":{"style":"stoneSpan","width":3.6}},
+    {"id":"kettle-way","name":"Kettle Crossing","color":"#eabc68","from":"bamboo-brook","to":"saffron-kiln",
+     "via":[{"id":"singing-kettle","at":[44,9,-8],"size":[13,11],"dressing":"steamCourt","approach":{"style":"ropeSpan","width":3.4},"guards":[{"id":"kettle-sentry","role":"kite","offset":[2,1]}]}],
+     "exit":{"style":"pilgrimRoad","width":4.2}},
+    {"id":"moon-way","name":"Moon Bridge","color":"#b6acd9","from":"fox-shrine","to":"maple-overlook",
+     "via":[
+       {"id":"moon-approach","at":[-88,12,-120],"size":[10,9],"dressing":"moonCourt","approach":{"width":4.5}},
+       {"id":"western-chain","at":[-70,12,-120],"size":[6,7],"dressing":"lotusStone","approach":{"width":3}},
+       {"id":"eastern-chain","at":[-47,12,-120],"size":[6,7],"dressing":"lotusStone","approach":{"style":"ropeSpan","width":3.8,"raised":7,"pieceId":"moon-bridge"}},
+       {"id":"moon-observatory","at":[32,14,-120],"size":[13,11],"dressing":"moonCourt","approach":{"style":"ropeSpan","width":3.6}}
+     ],"exit":{"style":"stoneSpan","width":4}},
+    {"id":"sky-thread","name":"Sky Thread","color":"#ed9279","from":"silkwind-stairs","to":"wind-seal",
+     "via":[
+       {"id":"kite-roost","at":[102,20,-174],"size":[10,9],"dressing":"carpPort","approach":{"width":4}},
+       {"id":"cloud-belfry","at":[-14,20,-174],"size":[12,11],"dressing":"bellTower","approach":{"style":"ropeSpan","width":2.8},"guards":[{"id":"belfry-kestrel","role":"kite","offset":[-2,1]}]}
+     ],"exit":{"style":"stoneSpan","width":4}}
+  ],
+  "trail": [
+    {"id": "salt-landing", "at": [0, 1.35, 82], "size": [13, 12], "dressing": "shoreGate"},
+    {"id": "tea-weighhouse", "at": [0, 3, 32], "size": [13, 12], "dressing": "teaTerrace", "guards": [{"id": "tea-weighhouse-ram", "role": "ram", "offset": [1, 0]}]},
+    {"id": "camellia-bend", "at": [52, 3, 32], "size": [13, 12], "dressing": "teaTerrace", "guards": [{"id": "camellia-bend-kite", "role": "kite", "offset": [1, 0]}]},
+    {"id": "tea-seal", "at": [100, 3, 32], "size": [13, 12], "dressing": "pilgrimGate", "guards": [{"id": "tea-seal-ram", "role": "ram", "offset": [1, 0]}]},
+    {"id": "bamboo-brook", "at": [100, 6, -8], "size": [13, 12], "dressing": "cedarGrove", "guards": [{"id": "bamboo-brook-kite", "role": "kite", "offset": [1, 0]}]},
+    {"id": "charcoal-turn", "at": [100, 8, -40], "size": [13, 12], "dressing": "kilnYard", "guards": [{"id": "charcoal-turn-ram", "role": "ram", "offset": [1, 0]}]},
+    {"id": "saffron-kiln", "at": [44, 8, -40], "size": [13, 12], "dressing": "kilnYard", "guards": [{"id": "saffron-kiln-kite", "role": "kite", "offset": [1, 0]}]},
+    {"id": "potters-seal", "at": [0, 8, -40], "size": [13, 12], "dressing": "kilnYard", "guards": [{"id": "potters-seal-ram", "role": "gatekeeper", "offset": [1, 0]}]},
+    {"id": "cedar-mile", "at": [-52, 8, -40], "size": [13, 12], "dressing": "cedarGrove", "guards": [{"id": "cedar-mile-ram", "role": "ram", "offset": [1, 0]}]},
+    {"id": "cedar-switch", "at": [-88, 8, -40], "size": [13, 12], "dressing": "cedarGrove"},
+    {"id": "fox-shrine", "at": [-88, 12, -94], "size": [13, 12], "dressing": "pilgrimGate", "guards": [{"id": "fox-shrine-kite", "role": "kite", "offset": [1, 0]}]},
+    {"id": "moss-gorge", "at": [-34, 12, -94], "size": [13, 12], "dressing": "stoneSpan", "guards": [{"id": "moss-gorge-ram", "role": "ram", "offset": [1, 0]}], "approach": {"width": 3.7, "gap": 1.2, "style": "stoneSpan"}},
+    {"id": "maple-overlook", "at": [32, 12, -94], "size": [13, 12], "dressing": "mapleGrove", "guards": [{"id": "maple-overlook-kite", "role": "kite", "offset": [1, 0]}]},
+    {"id": "vermilion-seal", "at": [102, 12, -94], "size": [13, 12], "dressing": "pilgrimGate", "guards": [{"id": "vermilion-seal-ram", "role": "ram", "offset": [1, 0]}]},
+    {"id": "silkwind-stairs", "at": [102, 17, -151], "size": [13, 12], "dressing": "mapleGrove", "guards": [{"id": "silkwind-stairs-kite", "role": "kite", "offset": [1, 0]}]},
+    {"id": "ribbon-loom", "approach":{"ride":"skyBarge","speed":3.5}, "at": [45, 17, -151], "size": [13, 12], "dressing": "teaTerrace", "guards": [{"id": "ribbon-loom-ram", "role": "ram", "offset": [1, 0]}]},
+    {"id": "wind-seal", "at": [-14, 17, -151], "size": [13, 12], "dressing": "pilgrimGate", "guards": [{"id": "wind-seal-kite", "role": "kite", "offset": [1, 0]}]},
+    {"id": "copper-switch", "at": [-80, 17, -151], "size": [13, 12], "dressing": "kilnYard", "guards": [{"id": "copper-switch-ram", "role": "ram", "offset": [1, 0]}]},
+    {"id": "crown-stair", "at": [-80, 23, -208], "size": [13, 12], "dressing": "cedarGrove", "guards": [{"id": "crown-stair-kite", "role": "kite", "offset": [1, 0]}], "approach": {"width": 3.7, "gap": 1.2, "style": "stoneSpan"}},
+    {"id": "charred-gate", "at": [-15, 23, -208], "size": [13, 12], "dressing": "pilgrimGate", "guards": [{"id": "charred-gate-ram", "role": "ram", "offset": [1, 0]}]},
+    {"id": "crown-of-embers", "at": [50, 23, -208], "size": [22, 20], "dressing": "hartRing", "guards": [{"id": "ember-hart", "role": "hart", "offset": [1, 0]}]}
+  ]
+}

@@ -1,0 +1,1857 @@
+{
+  "v": 1,
+  "cmd": "kimi-night-market-whole-001",
+  "mode": "replace",
+  "world": "last-ferry",
+  "base": 0,
+  "seed": 97,
+  "chapter": { "name": "Night Market", "alias": "market", "order": 1, "biome": "harbor" },
+  "look": "indigo-rain",
+  "weather": { "waves": 0.12 },
+  "spawn": "home:entry",
+  "goal": {
+    "type": "board",
+    "target": "last",
+    "hint": "All harbor signals are lit. Descend the eastern roofs to Fish Square and catch the ferry at the outer wharf.",
+    "completeHint": "Stay on the ferry or disembark to follow the road inland.",
+    "stops": [
+      {
+        "platform": "signal-tower",
+        "title": "Light the kite signal.",
+        "hint": "Go west past the tea house. Climb the awnings and beat the Brasswake captain at the kite signal.",
+        "guardian": "signal-captain"
+      },
+      {
+        "platform": "crane-cab",
+        "title": "Start the freight crane.",
+        "hint": "Drop north through the spice exchange. Ride the striped lift and clear its keeper.",
+        "guardian": "crane-keeper"
+      },
+      {
+        "platform": "pearl-light",
+        "title": "Wake the pearl lighthouse.",
+        "hint": "From the crane go north to Silk Customs, then west. Take the kiln roofs or the garden walk to the striped tower.",
+        "guardian": "beacon-warden"
+      },
+      {
+        "platform": "storm-gate",
+        "title": "Open the storm gate.",
+        "hint": "Go east past the glassworks and blossom trees. The windmill points the way to the north auction.",
+        "guardian": "storm-keeper"
+      },
+      {
+        "platform": "east-light",
+        "title": "Light the outer harbor.",
+        "hint": "Take the chime rail to the east light. Slip between the Breakwater Matriarch’s claws and light the outer signal.",
+        "guardian": "east-keeper"
+      }
+    ]
+  },
+  "entities": [
+    {
+      "id": "home",
+      "kind": "dock",
+      "at": [
+        0,
+        1.2,
+        0
+      ],
+      "size": [
+        7,
+        7
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "covered-market",
+      "kind": "stallRun",
+      "from": [
+        4.4,
+        1.2,
+        1.6
+      ],
+      "to": [
+        4.4,
+        1.2,
+        -13.8
+      ],
+      "bays": 6,
+      "width": 3.8,
+      "outerSide": "right",
+      "roofRoute": true
+    },
+    {
+      "id": "quay",
+      "kind": "dock",
+      "at": [
+        3,
+        1.2,
+        -16
+      ],
+      "size": [
+        7,
+        5
+      ],
+      "dressing": "lanternGate"
+    },
+    {
+      "id": "a",
+      "kind": "skiff",
+      "at": [
+        -1,
+        1.05,
+        -19.7
+      ],
+      "size": [
+        3,
+        2.4
+      ],
+      "color": "vermilion",
+      "sail": "#c24d36"
+    },
+    {
+      "id": "b",
+      "kind": "skiff",
+      "at": [
+        2,
+        1.05,
+        -22.2
+      ],
+      "size": [
+        3,
+        2.4
+      ],
+      "color": "vermilion",
+      "sail": "#c24d36"
+    },
+    {
+      "id": "c",
+      "kind": "skiff",
+      "at": [
+        5,
+        1.05,
+        -24.5
+      ],
+      "size": [
+        3,
+        2.4
+      ],
+      "color": "cream",
+      "sail": "#c24d36"
+    },
+    {
+      "id": "last",
+      "kind": "ferry",
+      "path": [
+        [
+          3,
+          1.2,
+          -32.7
+        ],
+        [
+          -8,
+          1.2,
+          -29
+        ]
+      ],
+      "speed": 1.1,
+      "initialDwell": 3,
+      "loop": "return"
+    },
+    {
+      "id": "west-landing",
+      "kind": "dock",
+      "at": [
+        -6,
+        1.35,
+        1
+      ],
+      "size": [
+        4.5,
+        4
+      ]
+    },
+    {
+      "id": "tea-house",
+      "kind": "dock",
+      "at": [
+        -9,
+        2.15,
+        -4.3
+      ],
+      "size": [
+        5.8,
+        5.4
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "roof-bridge",
+      "kind": "dock",
+      "at": [
+        -9,
+        2,
+        -11
+      ],
+      "size": [
+        2.6,
+        8
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "silk-pier",
+      "kind": "dock",
+      "at": [
+        -7,
+        1.65,
+        -17
+      ],
+      "size": [
+        6,
+        5
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "bell-landing",
+      "kind": "dock",
+      "at": [
+        -4,
+        1.45,
+        -24
+      ],
+      "size": [
+        5,
+        4
+      ],
+      "dressing": "lanternGate"
+    },
+    {
+      "id": "ferry-wharf",
+      "kind": "dock",
+      "at": [
+        3,
+        1.2,
+        -28
+      ],
+      "size": [
+        7,
+        5
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "dyers-row",
+      "kind": "dock",
+      "at": [
+        -18,
+        3.4,
+        -4
+      ],
+      "size": [
+        10,
+        6
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "indigo-roof",
+      "kind": "dock",
+      "at": [
+        -30,
+        4.9,
+        -4
+      ],
+      "size": [
+        12,
+        8
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "kitestring-bridge",
+      "kind": "dock",
+      "at": [
+        -40,
+        6.3,
+        -5
+      ],
+      "size": [
+        6,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "kite-yard",
+      "kind": "dock",
+      "at": [
+        -50,
+        7.7,
+        -5
+      ],
+      "size": [
+        12,
+        13
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "windward-eaves",
+      "kind": "dock",
+      "at": [
+        -50,
+        9.1,
+        -17
+      ],
+      "size": [
+        7,
+        9
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "silk-balcony",
+      "kind": "dock",
+      "at": [
+        -50,
+        10.6,
+        -27
+      ],
+      "size": [
+        8,
+        9
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "signal-tower",
+      "kind": "dock",
+      "at": [
+        -50,
+        12.1,
+        -38
+      ],
+      "size": [
+        10,
+        11
+      ],
+      "dressing": "beacon"
+    },
+    {
+      "id": "red-ridge",
+      "kind": "dock",
+      "at": [
+        -52,
+        9.4,
+        -53
+      ],
+      "size": [
+        6,
+        18
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "spice-exchange",
+      "kind": "dock",
+      "at": [
+        -52,
+        6,
+        -71
+      ],
+      "size": [
+        15,
+        15
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "salt-road",
+      "kind": "dock",
+      "at": [
+        -50,
+        3.7,
+        -90
+      ],
+      "size": [
+        8,
+        22
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "crane-base",
+      "kind": "dock",
+      "at": [
+        -50,
+        2,
+        -108
+      ],
+      "size": [
+        12,
+        12
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "freight-lift",
+      "kind": "dock",
+      "at": [
+        -40.2,
+        2,
+        -108
+      ],
+      "size": [
+        7,
+        7
+      ],
+      "dressing": "hoist",
+      "path": [
+        [
+          -40.2,
+          2,
+          -108
+        ],
+        [
+          -40.2,
+          11.7,
+          -108
+        ]
+      ],
+      "speed": 2.4
+    },
+    {
+      "id": "crane-cab",
+      "kind": "dock",
+      "at": [
+        -31,
+        12.3,
+        -108
+      ],
+      "size": [
+        10,
+        10
+      ],
+      "dressing": "beacon"
+    },
+    {
+      "id": "tramway-west",
+      "kind": "dock",
+      "at": [
+        -12,
+        12.3,
+        -108
+      ],
+      "size": [
+        26,
+        4
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "sail-loft",
+      "kind": "dock",
+      "at": [
+        8,
+        13.8,
+        -108
+      ],
+      "size": [
+        12,
+        10
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "canvas-span",
+      "kind": "dock",
+      "at": [
+        27,
+        13.8,
+        -108
+      ],
+      "size": [
+        23,
+        4
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "star-market",
+      "kind": "dock",
+      "at": [
+        46,
+        12.5,
+        -108
+      ],
+      "size": [
+        13,
+        12
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "chime-rail",
+      "kind": "dock",
+      "at": [
+        46,
+        14,
+        -91
+      ],
+      "size": [
+        5,
+        20
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "east-light",
+      "kind": "dock",
+      "at": [
+        46,
+        15.4,
+        -73
+      ],
+      "size": [
+        13,
+        13
+      ],
+      "dressing": "beacon"
+    },
+    {
+      "id": "glider-roof",
+      "kind": "dock",
+      "at": [
+        46,
+        11.6,
+        -59
+      ],
+      "size": [
+        10,
+        12
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "copper-roof",
+      "kind": "dock",
+      "at": [
+        46,
+        7.2,
+        -46
+      ],
+      "size": [
+        10,
+        12
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "fish-square",
+      "kind": "dock",
+      "at": [
+        46,
+        2.4,
+        -30
+      ],
+      "size": [
+        14,
+        16
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "fishmongers-walk",
+      "kind": "dock",
+      "at": [
+        27,
+        2.2,
+        -28
+      ],
+      "size": [
+        22,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "return-pier",
+      "kind": "dock",
+      "at": [
+        12,
+        1.4,
+        -28
+      ],
+      "size": [
+        7,
+        7
+      ],
+      "dressing": "lanternGate"
+    },
+    {
+      "id": "silk-customs",
+      "kind": "dock",
+      "at": [
+        -31,
+        10,
+        -137
+      ],
+      "size": [
+        14,
+        14
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "potters-yard",
+      "kind": "dock",
+      "at": [
+        -69,
+        9,
+        -137
+      ],
+      "size": [
+        16,
+        14
+      ],
+      "dressing": "pottery"
+    },
+    {
+      "id": "tile-kilns",
+      "kind": "dock",
+      "at": [
+        -100,
+        10,
+        -137
+      ],
+      "size": [
+        12,
+        13
+      ],
+      "dressing": "pottery"
+    },
+    {
+      "id": "shell-roofs",
+      "kind": "dock",
+      "at": [
+        -127,
+        11.5,
+        -137
+      ],
+      "size": [
+        14,
+        16
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "gull-terrace",
+      "kind": "dock",
+      "at": [
+        -127,
+        13,
+        -164
+      ],
+      "size": [
+        14,
+        12
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "pearl-light",
+      "kind": "dock",
+      "at": [
+        -127,
+        15,
+        -188
+      ],
+      "size": [
+        18,
+        18
+      ],
+      "dressing": "lighthouse"
+    },
+    {
+      "id": "glassworks",
+      "kind": "dock",
+      "at": [
+        -93,
+        15,
+        -188
+      ],
+      "size": [
+        13,
+        14
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "orchid-garden",
+      "kind": "dock",
+      "at": [
+        -55,
+        16,
+        -188
+      ],
+      "size": [
+        22,
+        18
+      ],
+      "dressing": "garden"
+    },
+    {
+      "id": "windmill-yard",
+      "kind": "dock",
+      "at": [
+        -18,
+        17,
+        -188
+      ],
+      "size": [
+        17,
+        16
+      ],
+      "dressing": "windmill"
+    },
+    {
+      "id": "north-auction",
+      "kind": "dock",
+      "at": [
+        16,
+        15,
+        -188
+      ],
+      "size": [
+        19,
+        18
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "storm-gate",
+      "kind": "dock",
+      "at": [
+        48,
+        13,
+        -188
+      ],
+      "size": [
+        17,
+        18
+      ],
+      "dressing": "beacon"
+    },
+    {
+      "id": "net-loft",
+      "kind": "dock",
+      "at": [
+        48,
+        12,
+        -158
+      ],
+      "size": [
+        14,
+        17
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "drying-court",
+      "kind": "dock",
+      "at": [
+        48,
+        12,
+        -131
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "dressing": "pottery"
+    },
+    {
+      "id": "inner-garden",
+      "kind": "dock",
+      "at": [
+        -69,
+        10,
+        -164
+      ],
+      "size": [
+        16,
+        16
+      ],
+      "dressing": "garden"
+    },
+    {
+      "id": "pearl-pier",
+      "kind": "dock",
+      "at": [
+        -97,
+        11.4,
+        -164
+      ],
+      "size": [
+        13,
+        10
+      ],
+      "dressing": "lanternGate"
+    },
+    {
+      "id": "orchid-balcony",
+      "kind": "dock",
+      "at": [
+        -55,
+        16,
+        -164
+      ],
+      "size": [
+        10,
+        10
+      ],
+      "dressing": "teahouse"
+    },
+    {
+      "id": "customs-stair",
+      "kind": "dock",
+      "at": [
+        -31,
+        11.15,
+        -121.5
+      ],
+      "size": [
+        5,
+        15.2
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "silk-road",
+      "kind": "dock",
+      "at": [
+        -49.5,
+        9.5,
+        -137
+      ],
+      "size": [
+        21.2,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "tile-walk",
+      "kind": "dock",
+      "at": [
+        -85.5,
+        9.5,
+        -137
+      ],
+      "size": [
+        15.2,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "kiln-eaves",
+      "kind": "dock",
+      "at": [
+        -113.0,
+        10.75,
+        -137
+      ],
+      "size": [
+        12.2,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "gull-bridge",
+      "kind": "dock",
+      "at": [
+        -127,
+        12.25,
+        -151.5
+      ],
+      "size": [
+        5,
+        11.2
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "beacon-approach",
+      "kind": "dock",
+      "at": [
+        -127,
+        14.0,
+        -174.5
+      ],
+      "size": [
+        5,
+        7.2
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "glass-causeway",
+      "kind": "dock",
+      "at": [
+        -108.75,
+        15.0,
+        -188
+      ],
+      "size": [
+        16.7,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "orchid-viaduct",
+      "kind": "dock",
+      "at": [
+        -76.25,
+        15.5,
+        -188
+      ],
+      "size": [
+        18.7,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "mill-walk",
+      "kind": "dock",
+      "at": [
+        -35.25,
+        16.5,
+        -188
+      ],
+      "size": [
+        15.7,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "auction-span",
+      "kind": "dock",
+      "at": [
+        -1.5,
+        16.0,
+        -188
+      ],
+      "size": [
+        14.2,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "storm-span",
+      "kind": "dock",
+      "at": [
+        32.5,
+        14.0,
+        -188
+      ],
+      "size": [
+        12.2,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "net-run",
+      "kind": "dock",
+      "at": [
+        48,
+        12.5,
+        -172.75
+      ],
+      "size": [
+        5,
+        10.7
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "drying-line",
+      "kind": "dock",
+      "at": [
+        48,
+        12.0,
+        -144.25
+      ],
+      "size": [
+        5,
+        8.7
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "garden-stair",
+      "kind": "dock",
+      "at": [
+        -69,
+        9.5,
+        -150.0
+      ],
+      "size": [
+        5,
+        10.2
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "pearl-walk",
+      "kind": "dock",
+      "at": [
+        -83.75,
+        10.7,
+        -164
+      ],
+      "size": [
+        11.7,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "lantern-arc",
+      "kind": "dock",
+      "at": [
+        -111.75,
+        12.2,
+        -164
+      ],
+      "size": [
+        14.7,
+        5
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "orchid-stair",
+      "kind": "dock",
+      "at": [
+        -55,
+        16.0,
+        -174.0
+      ],
+      "size": [
+        5,
+        8.2
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "starboard-stair",
+      "kind": "dock",
+      "at": [
+        47,
+        12,
+        -119
+      ],
+      "size": [
+        7,
+        10
+      ],
+      "dressing": "bridge"
+    },
+    {
+      "id": "garden-hoist",
+      "kind": "dock",
+      "at": [
+        -60,
+        10,
+        -164
+      ],
+      "size": [
+        4,
+        5
+      ],
+      "dressing": "hoist",
+      "path": [
+        [
+          -60,
+          10,
+          -164
+        ],
+        [
+          -60,
+          16,
+          -164
+        ]
+      ],
+      "speed": 2
+    },
+    {
+      "id": "customs-slip",
+      "kind": "dock",
+      "at": [
+        -39,
+        2,
+        -141
+      ],
+      "size": [
+        6,
+        7
+      ],
+      "dressing": "lanternGate"
+    },
+    {
+      "id": "pilots-launch",
+      "kind": "skiff",
+      "at": [
+        -47,
+        1.4,
+        -141
+      ],
+      "size": [
+        6,
+        4
+      ],
+      "path": [
+        [
+          -47,
+          1.4,
+          -141
+        ],
+        [
+          -70,
+          1.4,
+          -151
+        ]
+      ],
+      "speed": 3,
+      "initialDwell": 2,
+      "sail": "#daa349"
+    },
+    {
+      "id": "orchid-slip",
+      "kind": "dock",
+      "at": [
+        -71,
+        1.5,
+        -155
+      ],
+      "size": [
+        8,
+        7
+      ],
+      "dressing": "market"
+    },
+    {
+      "id": "petal-lift",
+      "kind": "dock",
+      "at": [
+        -74,
+        1.8,
+        -163
+      ],
+      "size": [
+        5,
+        6
+      ],
+      "dressing": "hoist",
+      "path": [
+        [
+          -74,
+          1.8,
+          -163
+        ],
+        [
+          -74,
+          10,
+          -163
+        ]
+      ],
+      "speed": 2.3
+    },
+    {
+      "id": "moon-gate",
+      "at": [
+        11,
+        6,
+        -46
+      ],
+      "size": [
+        20,
+        4
+      ],
+      "kind": "dock",
+      "dressing": "moonGate"
+    },
+    {
+      "id": "jasmine-house",
+      "at": [
+        23,
+        4.6,
+        -46
+      ],
+      "size": [
+        5,
+        7
+      ],
+      "kind": "dock",
+      "dressing": "teahouse"
+    },
+    {
+      "id": "jasmine-stairs",
+      "at": [
+        25,
+        3,
+        -39
+      ],
+      "size": [
+        5,
+        7
+      ],
+      "kind": "dock",
+      "dressing": "bridge"
+    },
+    {
+      "id": "floating-tea-garden",
+      "at": [
+        -14,
+        2,
+        -65
+      ],
+      "size": [
+        17,
+        15
+      ],
+      "kind": "dock",
+      "dressing": "garden"
+    },
+    {
+      "id": "tea-clipper",
+      "kind": "skiff",
+      "at": [
+        -10,
+        1.2,
+        -46
+      ],
+      "size": [
+        4.3,
+        8
+      ],
+      "sail": "#b64436",
+      "path": [
+        [
+          -10,
+          1.2,
+          -46
+        ],
+        [
+          -14,
+          1.2,
+          -55
+        ]
+      ],
+      "speed": 1.2
+    }
+  ],
+  "encounters": [
+    {
+      "id": "dyers-wisp",
+      "kind": "wisp",
+      "at": [
+        -30,
+        4.9,
+        -4
+      ],
+      "arena": "indigo-roof",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "advance",
+          "attack": "aimedPearl",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ]
+    },
+    {
+      "id": "kite-crab",
+      "kind": "crab",
+      "at": [
+        -50,
+        7.7,
+        -5
+      ],
+      "arena": "kite-yard",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8,
+          "radius": 1.25,
+          "speed": 0.7
+        }
+      ]
+    },
+    {
+      "id": "spice-keeper",
+      "kind": "crab",
+      "at": [
+        -52,
+        6,
+        -71
+      ],
+      "arena": "spice-exchange",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8,
+          "radius": 1.25,
+          "speed": 0.7
+        }
+      ]
+    },
+    {
+      "id": "salt-wisp",
+      "kind": "wisp",
+      "at": [
+        -50,
+        3.7,
+        -90
+      ],
+      "arena": "salt-road",
+      "maxHits": 2,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "flank",
+          "attack": "pearlFan",
+          "count": 3,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ],
+      "skin": "cage-lamp"
+    },
+    {
+      "id": "crane-keeper",
+      "kind": "crab",
+      "at": [
+        -31,
+        12.3,
+        -108
+      ],
+      "arena": "crane-cab",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8,
+          "radius": 1.25,
+          "speed": 0.7
+        }
+      ]
+    },
+    {
+      "id": "sail-wisp",
+      "kind": "wisp",
+      "at": [
+        8,
+        13.8,
+        -108
+      ],
+      "arena": "sail-loft",
+      "maxHits": 2,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "flank",
+          "attack": "pearlRing",
+          "count": 6,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ],
+      "skin": "cage-lamp"
+    },
+    {
+      "id": "star-wisp",
+      "kind": "wisp",
+      "at": [
+        46,
+        12.5,
+        -108
+      ],
+      "arena": "star-market",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "advance",
+          "attack": "pearlFan",
+          "count": 3,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ]
+    },
+    {
+      "id": "east-keeper",
+      "kind": "crab",
+      "at": [
+        46,
+        15.4,
+        -73
+      ],
+      "arena": "east-light",
+      "maxHits": 8,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 1,
+          "recover": 1.3,
+          "interval": 0.66,
+          "radius": 1.25,
+          "speed": 0.7,
+          "sequence": [
+            "pincers",
+            "breaker"
+          ]
+        },
+        {
+          "afterHits": 4,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.88,
+          "recover": 1.3,
+          "interval": 0.4,
+          "radius": 1.25,
+          "speed": 0.7,
+          "sequence": [
+            "bellfall",
+            "pincers",
+            "breaker"
+          ]
+        }
+      ],
+      "skin": "matriarch"
+    },
+    {
+      "id": "kiln-crab",
+      "kind": "crab",
+      "at": [
+        -100,
+        10,
+        -137
+      ],
+      "arena": "tile-kilns",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8,
+          "radius": 1.25,
+          "speed": 0.7
+        }
+      ]
+    },
+    {
+      "id": "beacon-warden",
+      "kind": "crab",
+      "at": [
+        -127,
+        15,
+        -188
+      ],
+      "arena": "pearl-light",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8,
+          "radius": 1.25,
+          "speed": 0.7
+        }
+      ]
+    },
+    {
+      "id": "garden-wisp",
+      "kind": "wisp",
+      "at": [
+        -55,
+        16,
+        -188
+      ],
+      "arena": "orchid-garden",
+      "maxHits": 2,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "advance",
+          "attack": "pearlRing",
+          "count": 6,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ]
+    },
+    {
+      "id": "auction-wisp",
+      "kind": "wisp",
+      "at": [
+        16,
+        15,
+        -188
+      ],
+      "arena": "north-auction",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "flank",
+          "attack": "pearlFan",
+          "count": 3,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ],
+      "skin": "cage-lamp"
+    },
+    {
+      "id": "storm-keeper",
+      "kind": "crab",
+      "at": [
+        48,
+        13,
+        -188
+      ],
+      "arena": "storm-gate",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8,
+          "radius": 1.25,
+          "speed": 0.7
+        }
+      ]
+    },
+    {
+      "id": "tea-diver",
+      "kind": "wisp",
+      "at": [
+        -8,
+        2.15,
+        -4.3
+      ],
+      "arena": "tea-house",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "advance",
+          "attack": "aimedPearl",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ]
+    },
+    {
+      "id": "signal-captain",
+      "kind": "wisp",
+      "at": [
+        -50,
+        12.1,
+        -38
+      ],
+      "arena": "signal-tower",
+      "maxHits": 8,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "advance",
+          "attack": "pearlFan",
+          "count": 3,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 1.05,
+          "recover": 1.18,
+          "interval": 0.58,
+          "sequence": [
+            "broadside",
+            "breaker"
+          ]
+        },
+        {
+          "afterHits": 4,
+          "movement": "advance",
+          "attack": "pearlFan",
+          "count": 3,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.84,
+          "recover": 1.03,
+          "interval": 0.42,
+          "sequence": [
+            "bellfall",
+            "breaker",
+            "broadside"
+          ]
+        }
+      ],
+      "skin": "captain"
+    },
+    {
+      "id": "crane-lamp",
+      "kind": "wisp",
+      "at": [
+        -49,
+        2,
+        -107
+      ],
+      "arena": "crane-base",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "flank",
+          "attack": "pearlFan",
+          "count": 3,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ],
+      "skin": "cage-lamp"
+    },
+    {
+      "id": "customs-copperback",
+      "kind": "crab",
+      "at": [
+        -30,
+        10,
+        -137
+      ],
+      "arena": "silk-customs",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8,
+          "radius": 1.25,
+          "speed": 0.7
+        }
+      ]
+    },
+    {
+      "id": "gull-diver",
+      "kind": "wisp",
+      "at": [
+        -126,
+        13,
+        -164
+      ],
+      "arena": "gull-terrace",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "advance",
+          "attack": "aimedPearl",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ]
+    },
+    {
+      "id": "glass-lamp",
+      "kind": "wisp",
+      "at": [
+        -93,
+        15,
+        -189
+      ],
+      "arena": "glassworks",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "flank",
+          "attack": "pearlFan",
+          "count": 3,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ],
+      "skin": "cage-lamp"
+    },
+    {
+      "id": "net-diver",
+      "kind": "wisp",
+      "at": [
+        47,
+        12,
+        -158
+      ],
+      "arena": "net-loft",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "advance",
+          "attack": "aimedPearl",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8
+        }
+      ]
+    },
+    {
+      "id": "fish-copperback",
+      "kind": "crab",
+      "at": [
+        46,
+        2.4,
+        -29
+      ],
+      "arena": "fish-square",
+      "maxHits": 3,
+      "activationRange": 13,
+      "phases": [
+        {
+          "afterHits": 0,
+          "movement": "perch",
+          "attack": "charge",
+          "count": 1,
+          "spread": 0.25,
+          "projectileSpeed": 3.2,
+          "tell": 0.95,
+          "recover": 1.65,
+          "interval": 0.8,
+          "radius": 1.25,
+          "speed": 0.7
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "v": 1,
+  "world": "last-ferry",
+  "levelId": "first-light",
+  "revision": 0,
+  "seed": 71,
+  "look": "indigo-rain",
+  "spawn": "home:entry",
+  "goal": { "type": "reach", "target": "quay" },
+  "jumpEnvelope": { "speed": 5, "jumpVelocity": 7.3, "gravity": 17 },
+  "entities": [
+    { "id": "home", "kind": "dock", "at": [0, 1.2, 0], "size": [5, 5], "dressing": "market" },
+    { "id": "quay", "kind": "dock", "at": [0, 1.2, -10], "size": [5, 4], "dressing": "lanternGate" },
+    { "id": "skiff-1", "kind": "skiff", "at": [5.4, 1.05, -5.3], "size": [3, 2.4], "color": "vermilion" }
+  ]
+}
